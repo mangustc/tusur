@@ -41,7 +41,7 @@ public class Lab3 {
 
         TVSmart tvsmart1 = new TVSmart(
                 "TVSmart brand", "TVSmart model", 1000000, 'E', 25);
-        System.out.println("TVSmart is smart: " + TVSmart.isSmart());
+        System.out.println("TVSmart is smart: " + TV.isSmart());
         System.out.println();
 
         IronEnergyEfficient ironEf1 = new IronEnergyEfficient(

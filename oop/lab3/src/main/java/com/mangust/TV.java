@@ -28,7 +28,7 @@ public class TV extends HouseholdAppliances {
         return size;
     }
 
-    private void checkSize(float size) throws IllegalArgumentException {
+    private static void checkSize(float size) throws IllegalArgumentException {
         if (size < 0)
             throw new IllegalArgumentException(
                     "TV size can't be lower than zero");

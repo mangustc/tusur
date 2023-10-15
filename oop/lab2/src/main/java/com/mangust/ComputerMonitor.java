@@ -13,7 +13,7 @@ public class ComputerMonitor extends Computer {
         super(brand, price, hddSizeMb);
         if (monitorSize < 0)
             throw new IllegalArgumentException(
-                    "Monitor size must not be lower than zero");
+                    "Monitor size can't be lower than zero");
         this.monitorSize = monitorSize;
     }
 

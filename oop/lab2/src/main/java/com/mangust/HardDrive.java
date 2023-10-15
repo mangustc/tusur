@@ -7,8 +7,7 @@ class HardDrive {
         this(0);
     }
 
-    HardDrive(int sizeMb)
-            throws IllegalArgumentException {
+    HardDrive(int sizeMb) throws IllegalArgumentException {
         if (sizeMb < 0)
             throw new IllegalArgumentException(
                     "Hard drive size can't be lower than zero");
@@ -16,6 +15,6 @@ class HardDrive {
     }
 
     public int getSizeMb() {
-        return this.sizeMb;
+        return sizeMb;
     }
 }
