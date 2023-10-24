@@ -1,0 +1,26 @@
+[
+  {
+    "nameOtdela": "nameOtdela1",
+    "productCode": "productCode1",
+    "name": "name1",
+    "country": "country1",
+    "retailPrice": 1.0,
+    "namesource": "namesource1"
+  },
+  {
+    "nameOtdela": "nameOtdela3",
+    "productCode": "productCode3",
+    "name": "name3",
+    "country": "country3",
+    "retailPrice": 3.0,
+    "namesource": "namesource3"
+  },
+  {
+    "nameOtdela": "nameOtdela4",
+    "productCode": "productCode4",
+    "name": "name4",
+    "country": "country4",
+    "retailPrice": 4.0,
+    "namesource": "namesource4"
+  }
+]
