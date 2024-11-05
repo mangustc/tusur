@@ -1,10 +1,9 @@
-from sqlalchemy import ForeignKey
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from sqlalchemy import ForeignKey, create_engine
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker
 from typing import Optional
 
-engine = create_async_engine("sqlite+aiosqlite:///./site.db")
-new_session = async_sessionmaker(engine, expire_on_commit=False)
+engine = create_engine("sqlite:///./site.db")
+new_session = sessionmaker(engine, expire_on_commit=False)
 
 
 class Model(DeclarativeBase):
@@ -58,10 +57,10 @@ class StudentModel(Model):
     student_last_name: Mapped[str]
     student_first_name: Mapped[str]
     student_middle_name: Mapped[Optional[str]]
+    student_test: Mapped[Optional[str]]
 
     finhelp_applications: Mapped[list["FinhelpApplicantModel"]] = relationship()
 
 
-async def create_tables():
-    async with engine.begin() as conn:
-        await conn.run_sync(Model.metadata.create_all)
+def create_tables():
+    Model.metadata.create_all(engine)

@@ -1,19 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api import router as api_router
-from contextlib import asynccontextmanager
 from database import create_tables
 import os
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    if not os.path.isfile("./site.db"):
-        await create_tables()
-    yield
 
+if not os.path.isfile("./site.db"):
+    create_tables()
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 app.include_router(api_router)
 
 
